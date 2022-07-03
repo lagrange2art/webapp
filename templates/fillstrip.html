@@ -1,0 +1,98 @@
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<style id='compiled-css' type='text/css'>
+.wrapper {
+  display: flex;
+}
+.box {
+  width: 60px;
+  height: 60px;
+  border-style: solid;
+  border-color: white;
+ }
+.off {
+  background: rgb(0,0,0);
+}
+.white {
+  background: rgb(200,200,200);
+}
+.g00 {
+  background: rgb(255,51,51);
+}
+.g01 {
+  background: rgb(255,153,51);
+}
+.g02 {
+  background: rgb(255,255,0);
+}
+.g03 {
+  background: rgb(128,255,0);
+}
+
+
+.g10 {
+  background: rgb(0,255,0);
+}
+.g11 {
+  background: rgb(0,255,128);
+}
+.g12 {
+  background: rgb(0,255,255);
+}
+.g13 {
+  background: rgb(0, 128, 255);
+}
+
+
+.g20 {
+  background: rgb(0,0,255);
+}
+.g21 {
+  background: rgb(127,0,255);
+}
+.g22 {
+  background: rgb(255,0,255);
+}
+.g23 {
+  background: rgb(255,0,127);
+}
+
+
+</style>
+</head>
+<h1> Light up led strip </h1>
+<h0>  To light up led strip open URL /fillstrip/rgb where rgb is a comma seperated list of 3 integers between 0 and 255. Current choice is rgb={{ name }}. Color looks as follows:</h0>
+</body>
+<div class="w1-center" style="line-height:70px;color:white;font-size:20px;font-weight:bold;font-family:Consolas, 'Courier New', Courier, monospace">
+  <div style="background-color:rgb({{ name }});margin:20px 0;">.</div>
+</div>
+
+
+<div class="wrapper">
+  <a href='/fillstrip/0,0,0'><div class="box off"></div></a>
+  <a href='/fillstrip/255,255,255'><div class="box white"></div></a>
+</div>
+<div class="wrapper"> 
+  <a href='/fillstrip/255,51,51'><div class="box g00"></div></a>
+  <a href='/fillstrip/255,51,51'><div class="box g01"></div></a>
+  <a href='/fillstrip/255,255,0'><div class="box g02"></div></a>
+  <a href='/fillstrip/128,255,0'><div class="box g03"></div></a>
+</div>
+<div class="wrapper">
+  <a href='/fillstrip/0,255,0'><div class="box g10"></div></a>
+  <a href='/fillstrip/0,255,128'><div class="box g11"></div></a>
+  <a href='/fillstrip/0,255,255'><div class="box g12"></div></a>
+  <a href='/fillstrip/0,128,255'><div class="box g13"></div></a>
+</div>
+<div class="wrapper">
+  <a href='/fillstrip/0,0,255'><div class="box g20"></div></a>
+  <a href='/fillstrip/127,0,255'><div class="box g21"></div></a>
+  <a href='/fillstrip/255,0,255'><div class="box g22"></div></a>
+  <a href='/fillstrip/255,0,127'><div class="box g23"></div></a>
+</div>
+
+
+
+<body> <a href="/">back</a> </body>
+</html>
