@@ -4,6 +4,8 @@ this is run at startup. To change this behavior delete call from /etc/rc.local
 
 from flask import Flask, render_template, request
 from ledstrip.fillstrip import lightup
+from ledstrip.motion import animation
+
 #from PiCam.ambilight import Ambilight
 
 import threading  # create independent thread for ambilight
@@ -58,6 +60,14 @@ def set_brightness(rgb):
         # show new brightness if 'update' button is pressed
         fillstrip(rgb)
         return render_template('fillstrip.html', name=rgb)
+
+
+@app.route('/animation/')
+def animate():
+    animation()
+
+    return render_template('animation.html')
+    
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', threaded=True)
